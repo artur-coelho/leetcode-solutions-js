@@ -1,4 +1,4 @@
-const search = require('../src/0704-recursive-binary-search');
+const search = require('../src/leetcode/0704-recursive-binary-search');
 
 test('finds target in sorted array', () => {
   expect(search([1,2,3,4,5], 3)).toBe(2);

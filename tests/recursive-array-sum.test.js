@@ -1,4 +1,4 @@
-const arraySum = require('../src/recursive-array-sum');
+const arraySum = require('../src/others/recursive-array-sum');
 
 describe('Array Sum - Recursive Function', () => {
   test('should return 0 for empty array', () => {
