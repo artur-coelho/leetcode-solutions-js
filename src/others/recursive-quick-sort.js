@@ -2,23 +2,27 @@
  * @param {number[]} nums
  * @return {number[]}
  */
-var quickSort = function(nums) {
+function quickSort(nums) {
     if(nums.length < 2) {
         return nums;
     } else {
-        const pivot = nums[0];
-        let smaller = [];
-        let bigger = [];
+        const pivotIndex = Math.floor(Math.random() * nums.length);
+        const pivot = nums[pivotIndex];
+        const smaller = [];
+        const bigger = [];
+        const pivotArray = [];
 
-        for(let i = 1; i < nums.length; i++) {
+        for(let i = 0; i < nums.length; i++) {
             if(nums[i] < pivot) {
                 smaller.push(nums[i]);
-            } else {
+            } else if(nums[i] > pivot){
                 bigger.push(nums[i]);
+            } else {
+                pivotArray.push(nums[i]);
             }
         }
 
-        return [...quickSort(smaller), pivot, ...quickSort(bigger)]
+        return [...quickSort(smaller), ...pivotArray, ...quickSort(bigger)]
     }
 };
 
